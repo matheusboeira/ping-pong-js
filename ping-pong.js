@@ -106,7 +106,7 @@ const ball = {
     }
 
     if (
-      this.positionY - this.radius < 0 && this.directionY < 0 || 
+      this.positionY - this.radius < 0 && this.directionY < 0 ||
       this.positionY > field.height - this.radius && this.directionY > 0
     ) {
       this._reverseY()
@@ -182,8 +182,14 @@ window.animateFrame = (function () {
 })()
 
 const main = () => {
-  animateFrame(main)
-  draw()
+  if (score.human < 15 && score.computer < 15) {
+    animateFrame(main)
+    draw()
+  } else if (score.human == 15) {
+    alert('O impossível aconteceu :O') ? "" : window.location.reload();
+  } else {
+    alert("O computador ganhou novamente! \\\:D/") ? "" : window.location.reload();
+  }
 }
 
 canvas.addEventListener('mousemove', (e) => {
