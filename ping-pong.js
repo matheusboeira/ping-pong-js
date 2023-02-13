@@ -66,8 +66,8 @@ const rightPaddle = {
 }
 
 const ball = {
-  positionX: 0,
-  positionY: 0,
+  positionX: 100,
+  positionY: 25,
   radius: RADIUS_BALL,
   speed: SPEED_BALL,
   directionX: 1,
